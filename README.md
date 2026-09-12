@@ -98,8 +98,7 @@
 
 AlphaForge is engineered around a Layered Model-View-Service-Repository architecture, prioritizing high cohesion and loose coupling. By offloading computationally intensive backtesting simulations to an asynchronous Redis task queue, the platform prevents UI blocking and ensures the REST API remains highly responsive under load.
 
-### Architecture Diagram
-![AlphaForge Architecture Diagram](docs/design/architecture_v2.png)
+### Architecture Diagram https://app.diagrams.net/#G1hFjhNLtuU6RAQqlUXxim8QGBVBkOCAFc#%7B%22pageId%22%3A%22sYAJIV_2XIXlJZFzMAzr%22%7D
 
 ### Design Artifacts
 * **Editable Architecture:** https://app.diagrams.net/#G1hFjhNLtuU6RAQqlUXxim8QGBVBkOCAFc#%7B%22pageId%22%3A%22sYAJIV_2XIXlJZFzMAzr%22%7D
