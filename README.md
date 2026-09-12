@@ -93,3 +93,21 @@
 - **Cache:** Redis for fast data retrieval.
 - **Design:** Figma, Draw.io (for architecture diagrams).
 - **Workflow:** This project adheres to **GitHub Flow**, utilizing feature branches (e.g., `feat/initial-setup`) merged into `main`.
+
+  ## Software Design
+
+AlphaForge is engineered around clean architectural principles, strictly emphasizing high cohesion, modularity, and loose coupling. The platform separates computationally intensive quantitative calculations from client-facing REST APIs by decoupling tasks through an asynchronous Redis broker.
+
+### Architecture Overview
+The system follows a Layered Model-View-Service-Repository architecture. The frontend UI communicates with the FastAPI gateway via structured JSON transfer contracts. Complex mathematical backtests are offloaded to dedicated background workers, preserving sub-second API responsiveness while enabling parallel evaluations over high-density historical time-series datasets.
+
+![AlphaForge Architecture](docs/design/architecture_v2.png)
+
+*   **Editable Architecture Source:** https://app.diagrams.net/#G1hFjhNLtuU6RAQqlUXxim8QGBVBkOCAFc#%7B%22pageId%22%3A%22sYAJIV_2XIXlJZFzMAzr%22%7D
+  
+*   **Interactive Figma Prototype:** ] https://www.figma.com/make/0hk5Gt9havspnqxquTfSsn/Design-Dark-Mode-UI?t=pdAgP40pLEp99EEM-1
+
+### Primary Design Decisions
+1. **Vectorized Computation Engine:** Leverages NumPy/Pandas array operations over row iterations, cutting simulation runtimes down to sub-second execution speeds.
+2. **Abstract Syntax Tree (AST) Parsing:** Mathematical expressions are verified against a secure AST white-list, eliminating remote code execution vulnerabilities inherent to dynamic language evaluation.
+3. **Stateless JWT Security:** Implements token-based authorization to decouple user authentication state from database lookups on high-frequency API endpoints.
