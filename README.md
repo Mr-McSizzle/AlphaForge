@@ -102,4 +102,4 @@ AlphaForge is engineered around a Layered Model-View-Service-Repository architec
 
 ### Design Artifacts
 * **Editable Architecture:** https://app.diagrams.net/#G1hFjhNLtuU6RAQqlUXxim8QGBVBkOCAFc#%7B%22pageId%22%3A%22sYAJIV_2XIXlJZFzMAzr%22%7D
-* **Interactive Prototype:** https://www.figma.com/make/0hk5Gt9havspnqxquTfSsn/Design-Dark-Mode-UI?t=pdAgP40pLEp99EEM-1
+* **Interactive Prototype:** (https://www.figma.com/make/0hk5Gt9havspnqxquTfSsn/Design-Dark-Mode-UI?fullscreen=1&t=IHAI1rYxbr01jP3R-1&code-node-id=0-6)
