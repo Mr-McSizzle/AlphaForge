@@ -6,34 +6,29 @@ AlphaForge is a full-stack research environment for expressing trading rules, lo
 
 ## Architecture
 
-The repository is organized as a multi-service application:
-
-```text
-Frontend
-   ↓
-Backend API
-   ├── PostgreSQL — persistent experiment / workspace state
-   └── Redis      — caching / fast transient state
+```mermaid
+flowchart LR
+    A[Researcher] --> B[Frontend]
+    B --> C[Backend API]
+    C --> D[(PostgreSQL)]
+    C --> E[(Redis)]
+    C --> F[Backtest engine]
+    F --> G[Trades + metrics]
+    G --> B
 ```
 
 The included Docker Compose configuration provisions PostgreSQL, Redis, the backend service, and the frontend service.
 
 ## Research workflow
 
-AlphaForge is designed around a simple loop:
-
-```text
-ingest data
-    ↓
-define strategy logic
-    ↓
-validate configuration
-    ↓
-run historical simulation
-    ↓
-apply costs / slippage assumptions
-    ↓
-inspect equity, drawdown, trades, and comparative results
+```mermaid
+flowchart TD
+    A[Ingest data] --> B[Define strategy logic]
+    B --> C[Validate configuration]
+    C --> D[Historical simulation]
+    D --> E[Apply costs + slippage]
+    E --> F[Inspect equity / drawdown / trades]
+    F --> G[Compare experiments]
 ```
 
 ## Intended capabilities
